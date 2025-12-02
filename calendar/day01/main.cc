@@ -65,7 +65,7 @@ constexpr SafeMovement moves_from_str(std::string_view str)
 {
     if (str.length() < 2)
     {
-        MSG(stderr, "string '{}' is ill-formed", str);
+        MSG("string '{}' is ill-formed", str);
         ASSERT(false);
     }
 
@@ -79,7 +79,7 @@ constexpr SafeMovement moves_from_str(std::string_view str)
         dir = SafeDirection::RIGHT;
         break;
     default:
-        MSG(stderr, "string '{}' is ill-formed", str);
+        MSG("string '{}' is ill-formed", str);
         ASSERT(false);
     }
 
@@ -119,6 +119,6 @@ int main()
 {
     constexpr SafePosition initial{50};
     size_t zeroes = zeroes_comptime(initial, std::span{SAMPLE});
-    std::println(stdout, "{} zeroes", zeroes);
+    std::println("{} zeroes", zeroes);
     return 0;
 }
