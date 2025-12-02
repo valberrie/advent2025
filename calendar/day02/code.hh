@@ -80,12 +80,8 @@ constexpr bool split_and_check(elfid_t id, digit_t digits, digit_t splitAt)
 
     if (splitAt != 1)
     {
-        // 123123123
-        //       ^^^ i
         for (digit_t i = 1; i < digits / splitAt; ++i)
         {
-            // 123123123
-            //   ^  ^  ^ j
             for (digit_t j = 0; j < splitAt; ++j)
             {
                 const digit_t last = nth_digit(id, j);
